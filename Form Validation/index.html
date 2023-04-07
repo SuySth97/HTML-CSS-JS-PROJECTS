@@ -5,76 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validation</title>
-
-    <style>
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: skyblue;
-        height: 100vh;
-      }
-      #form-container {
-        background-color: white;
-        padding: 50px;
-        text-align: center;
-        border-radius: 8px;
-        box-shadow: -3px 8px 10px rgba(0, 0, 0, 0.5);
-      }
-      h2 {
-        margin: 0px 0px 10px 0px;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
-      }
-      input {
-        width: 222px;
-        margin: 8px 0px;
-        padding: 16px;
-        border-radius: 5px;
-        border: 0px solid grey;
-        outline: none;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
-      }
-      input[type="submit"] {
-        width: 222px;
-        background-color: salmon;
-        border: none;
-        color: white;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: 600;
-      }
-      input[type="submit"]:hover {
-        background-color: cadetblue;
-        color: white;
-      }
-      .error {
-        text-align: left;
-        margin: 0;
-        padding: 2px;
-        color: red;
-      }
-    </style>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
     <div id="form-container">
       <h2>Login</h2>
-      <form action="" onsubmit="return validateForm()">
-        <input type="text" placeholder="User Name" id="username"/><br />
-        <p id="user-error" class="error"></p>
+      <form action="" onsubmit="return validateForm()" class="form">
+        <div class="inputBox">
+          <input
+            type="text"
+            placeholder="Enter Username"
+            id="username"
+            name="user"
+          /><br />
+          <i class="fa-regular fa-user"></i>
+          <p id="user-error" class="error"></p>
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          id="password"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-        /><br />
-        <p id="pass-error" class="error"></p>
-        <input type="submit" />
+        <div class="inputBox">
+          <input
+            type="email"
+            placeholder="Enter Email Address"
+            id="email"
+            name="email"
+          /><br />
+          <i class="fa-regular fa-envelope"></i>
+          <p id="email-error" class="error"></p>
+        </div>
+
+        <div class="inputBox">
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            name="pass"
+          /><br />
+          <i class="fa-solid fa-key"></i>
+          <p id="pass-error" class="error"></p>
+        </div>
+
+        <div class="inputBox">
+          <input type="submit" />
+        </div>
       </form>
     </div>
 
