@@ -1,6 +1,6 @@
 // images = 4(0,1,2,3)
 
-let flag = 0;//to match with array[2]
+let flag = 0;//to match with array[0]
 
 
 function controller(x) {
@@ -31,6 +31,6 @@ function slideShow(num) {
     y.style.display = "none";
   }
 
-  slides[num].style.display = "block";//display image at array[2] 
+  slides[num].style.display = "block";//display image at array[0] 
 
 }
